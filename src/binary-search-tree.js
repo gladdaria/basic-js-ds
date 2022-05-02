@@ -6,21 +6,21 @@ const { Node } = require('../extensions/list-tree.js');
 * Implement simple binary search tree according to task description
 * using Node from extensions
 */
+
 class BinarySearchTree {
 
   constructor() {
-    this.root = null;
+    this.tree = null;
   }
 
   root() {
-     return this.root;
-    
+    return this.tree;
     //throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 
   add(data) {
-    this.root = addWithin(this.root, data);
+    this.tree = addWithin(this.tree, data);
 
     function addWithin(node, data) {
       if(!node){
@@ -41,7 +41,7 @@ class BinarySearchTree {
   }
 
   has(data) {
-    return searchWithin(this.root, data);
+    return searchWithin(this.tree, data);
 
     function searchWithin(node, data) {
       if(!node) {
@@ -58,7 +58,7 @@ class BinarySearchTree {
   }
 
   find(data) {
-    return findWithin(this.root, data);
+    return findWithin(this.tree, data);
 
     function findWithin(node, data) {
       if(!node) {
@@ -75,7 +75,7 @@ class BinarySearchTree {
   }
 
   remove(data) {
-    this.root = removeNode(this.root, data);
+    this.tree = removeNode(this.tree, data);
 
     function removeNode(node, data) {
       if(!node) {
@@ -116,10 +116,10 @@ class BinarySearchTree {
   }
 
   min() {
-    if(!this.root){
+    if(!this.tree){
       return;
     }
-    let node = this.root;
+    let node = this.tree;
     while(node.left) {
       node = node.left;
     }
@@ -129,10 +129,10 @@ class BinarySearchTree {
   }
 
   max() {
-    if(!this.root){
+    if(!this.tree){
       return;
     }
-    let node = this.root;
+    let node = this.tree;
     while(node.right) {
       node = node.right;
     }
